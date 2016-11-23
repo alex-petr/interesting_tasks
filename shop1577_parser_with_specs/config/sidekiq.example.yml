@@ -1,0 +1,16 @@
+---
+:concurrency: 30
+:logfile: ./log/sidekiq.log
+:queues:
+  - default
+  - update_product_details
+  - parse_pages_parser
+  - match_products_parser
+  - update_product_details
+  - image_parser
+:limits:
+    default: 4
+    update_product_details: 8
+    parse_pages_parser: 5
+    match_products_parser: 6
+    image_parser: 5
