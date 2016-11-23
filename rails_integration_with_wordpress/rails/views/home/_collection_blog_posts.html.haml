@@ -1,0 +1,12 @@
+- blog_posts_collection = fetch_blog_posts(@blog_posts_cache_name, @blog_posts_limit, @blog_posts_source)
+
+- if blog_posts_collection.present?
+  %section.main.main--template-blog-post
+    .main__container
+      .main__row
+        .main__header.main__header--blog-post-header
+          = link_to blog_path do
+            = t('homepage.shopping_guide').mb_chars.capitalize
+        #react-blog-posts-slider
+        .collection__wrapper-slider.blog-posts-slider
+          = render partial: 'home/blog_post', collection: blog_posts_collection

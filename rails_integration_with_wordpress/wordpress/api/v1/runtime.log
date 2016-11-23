@@ -1,0 +1,160 @@
+E, [2016-02-15 12:09:49 1455538189 #5220]  ERROR -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+E, [2016-02-15 12:09:49 1455538189 #5220]  ERROR -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+E, [2016-02-15 12:09:49 1455538189 #5220]  ERROR -- : ERROR MESSAGES FROM fetch/update methods
+
+I, [2016-02-15 12:14:21 1455538458 #5220]  INFO -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+I, [2016-02-15 12:14:21 1455538458 #5220]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+I, [2016-02-15 12:14:21 1455538458 #5220]  INFO -- : Category data successfully updated and saved to DB.
+
+D, [2016-02-15 12:26:40 1455539200 #5220]  DEBUG -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+D, [2016-02-15 12:26:40 1455539200 #5220]  DEBUG -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+D, [2016-02-15 12:26:40 1455539200 #5220]  DEBUG -- : Array
+
+F, [2016-02-15 12:27:02 1455539222 #5220]  FATAL -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+F, [2016-02-15 12:27:02 1455539222 #5220]  FATAL -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+F, [2016-02-15 12:27:02 1455539222 #5220]  FATAL -- : Array
+
+W, [2016-02-15 12:28:44 1455539324 #5220]  WARN -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+W, [2016-02-15 12:28:44 1455539324 #5220]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+W, [2016-02-15 12:28:44 1455539324 #5220]  WARN -- : Array
+
+W, [2016-02-15 13:04:57 1455541495 #5220]  WARN -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+W, [2016-02-15 13:04:57 1455541495 #5220]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+W, [2016-02-15 13:04:57 1455541495 #5220]  WARN -- : ERROR MESSAGES FROM fetch/update methods
+
+E, [2016-02-15 13:17:11 1455542230 #5220]  ERROR -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+E, [2016-02-15 13:17:11 1455542230 #5220]  ERROR -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+E, [2016-02-15 13:17:11 1455542230 #5220]  ERROR -- : Error during fetching category data.
+
+E, [2016-02-15 13:17:49 1455542267 #5220]  ERROR -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+E, [2016-02-15 13:17:49 1455542267 #5220]  ERROR -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+E, [2016-02-15 13:17:49 1455542267 #5220]  ERROR -- : Error during fetching category data: file_get_contents() failed to fetch https://shopsmart.xyz/api/v1/categories/.json
+
+E, [2016-02-15 13:19:47 1455542385 #5220]  ERROR -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+E, [2016-02-15 13:19:47 1455542385 #5220]  ERROR -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+E, [2016-02-15 13:19:47 1455542385 #5220]  ERROR -- : Category data fetched. Category data saved to DB.
+
+E, [2016-02-15 13:30:23 1455543023 #5220]  ERROR -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+E, [2016-02-15 13:30:23 1455543023 #5220]  ERROR -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+E, [2016-02-15 13:30:23 1455543023 #5220]  ERROR -- : Cache not expired yet.
+
+I, [2016-02-15 13:34:13 1455543252 #5220]  INFO -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+I, [2016-02-15 13:34:13 1455543252 #5220]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+I, [2016-02-15 13:34:13 1455543252 #5220]  INFO -- : Cache not expired yet.
+
+F, [2016-02-15 13:40:55 1455543653 #5220]  FATAL -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+F, [2016-02-15 13:40:55 1455543653 #5220]  FATAL -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+F, [2016-02-15 13:40:55 1455543653 #5220]  FATAL -- : Error during fetching category data: file_get_contents() failed to fetch https://shopsmart.xyz/api/v1/categories/.json
+
+I, [2016-02-15 13:41:38 1455543695 #5220]  INFO -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+I, [2016-02-15 13:41:38 1455543695 #5220]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+I, [2016-02-15 13:41:38 1455543695 #5220]  INFO -- : Category data fetched. Category data saved to DB.
+
+W, [2016-02-15 13:47:20 1455544040 #5220]  WARN -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update4" for 127.0.0.1
+W, [2016-02-15 13:47:20 1455544040 #5220]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+W, [2016-02-15 13:47:20 1455544040 #5220]  WARN -- : Invalid action.
+
+W, [2016-02-15 13:47:39 1455544059 #5220]  WARN -- : Started GET "/api/v1/categories.php/?secret=_5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+W, [2016-02-15 13:47:39 1455544059 #5220]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+W, [2016-02-15 13:47:39 1455544059 #5220]  WARN -- : Invalid secret key.
+
+W, [2016-02-15 13:48:01 1455544081 #5220]  WARN -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+W, [2016-02-15 13:48:01 1455544081 #5220]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+W, [2016-02-15 13:48:01 1455544081 #5220]  WARN -- : Invalid remote IP.
+
+I, [2016-02-15 13:48:20 1455544098 #5220]  INFO -- : Started GET "/api/v1/categories.php/?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+I, [2016-02-15 13:48:20 1455544098 #5220]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
+I, [2016-02-15 13:48:20 1455544098 #5220]  INFO -- : Category data fetched. Category data saved to DB.
+
+I, [2016-04-28 15:34:14 1461857651 #4265]  INFO -- : Started GET "/api/v1/categories.php?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+I, [2016-04-28 15:34:14 1461857651 #4265]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36
+I, [2016-04-28 15:34:14 1461857651 #4265]  INFO -- : Category data fetched. Category data saved to DB.
+
+I, [2016-04-28 15:34:52 1461857692 #4265]  INFO -- : Started GET "/api/v1/categories.php?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+I, [2016-04-28 15:34:52 1461857692 #4265]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36
+I, [2016-04-28 15:34:52 1461857692 #4265]  INFO -- : Cache not expired yet.
+
+I, [2016-04-28 15:36:42 1461857802 #4265]  INFO -- : Started GET "/api/v1/categories.php?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+I, [2016-04-28 15:36:42 1461857802 #4265]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36
+I, [2016-04-28 15:36:42 1461857802 #4265]  INFO -- : Cache not expired yet.
+
+I, [2016-04-28 15:36:48 1461857805 #4265]  INFO -- : Started GET "/api/v1/categories.php?secret=5c36cce0414d1db4564bb94c6e87fda14e1bbbafb84a2d15a53303621504753ae0d2cf916b4e53933ec5d577fe0b59fb53be9dd156726a643437163826808034&action=update" for 127.0.0.1
+I, [2016-04-28 15:36:48 1461857805 #4265]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36
+I, [2016-04-28 15:36:48 1461857805 #4265]  INFO -- : Category data fetched. Category data saved to DB.
+
+I, [2016-05-24 12:45:44 1464093944 #7651]  INFO -- : Started GET "/api/v1/posts.php?secret=2a72892e01f9402350ace15bb0668418a857719ad4e65f5d5c3a05556fc2b7d7203d1eb7087af642c566b88f1405d9c2d33962e5dc819be2db8f02f5d458c728" for 127.0.0.1
+I, [2016-05-24 12:45:44 1464093944 #7651]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
+I, [2016-05-24 12:45:44 1464093944 #7651]  INFO -- : Posts are selected from the DB successfully.
+
+W, [2016-05-24 18:00:41 1464112841 #2182]  WARN -- : Started GET "/api/v1/posts.php?secret2=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540" for 127.0.0.1
+W, [2016-05-24 18:00:41 1464112841 #2182]  WARN -- : User Agent: Ruby
+W, [2016-05-24 18:00:41 1464112841 #2182]  WARN -- : Invalid secret key.
+
+W, [2016-05-30 14:09:32 1464617372 #31257]  WARN -- : Started GET "/api/v1/posts.php?secret=2a72892e01f9402350ace15bb0668418a857719ad4e65f5d5c3a05556fc2b7d7203d1eb7087af642c566b88f1405d9c2d33962e5dc819be2db8f02f5d458c728" for 127.0.0.1
+W, [2016-05-30 14:09:32 1464617372 #31257]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36
+W, [2016-05-30 14:09:32 1464617372 #31257]  WARN -- : Invalid secret key.
+
+W, [2016-08-25 12:41:03 1472128863 #26866]  WARN -- : Started GET "/api/v1/categories.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540" for 127.0.0.1
+W, [2016-08-25 12:41:03 1472128863 #26866]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+W, [2016-08-25 12:41:03 1472128863 #26866]  WARN -- : Invalid remote IP.
+
+W, [2016-08-25 12:41:27 1472128887 #26866]  WARN -- : Started GET "/api/v1/categories.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540" for 127.0.0.1
+W, [2016-08-25 12:41:27 1472128887 #26866]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+W, [2016-08-25 12:41:27 1472128887 #26866]  WARN -- : Invalid remote IP.
+
+W, [2016-08-25 12:41:29 1472128889 #26866]  WARN -- : Started GET "/api/v1/categories.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540" for 127.0.0.1
+W, [2016-08-25 12:41:29 1472128889 #26866]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+W, [2016-08-25 12:41:29 1472128889 #26866]  WARN -- : Invalid remote IP.
+
+W, [2016-08-25 12:41:54 1472128914 #26866]  WARN -- : Started GET "/api/v1/categories.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540" for 127.0.0.1
+W, [2016-08-25 12:41:54 1472128914 #26866]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+W, [2016-08-25 12:41:54 1472128914 #26866]  WARN -- : Invalid action.
+
+W, [2016-08-25 12:41:54 1472128914 #26866]  WARN -- : Started GET "/api/v1/categories.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540" for 127.0.0.1
+W, [2016-08-25 12:41:54 1472128914 #26866]  WARN -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+W, [2016-08-25 12:41:54 1472128914 #26866]  WARN -- : Invalid action.
+
+F, [2016-08-25 12:42:17 1472128937 #26866]  FATAL -- : Started GET "/api/v1/categories.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&action=update" for 127.0.0.1
+F, [2016-08-25 12:42:17 1472128937 #26866]  FATAL -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+F, [2016-08-25 12:42:17 1472128937 #26866]  FATAL -- : Error during fetching category data: file_get_contents() failed to fetch SHOPSMART_DOMAIN/api/v1/categories.json
+
+I, [2016-08-25 15:06:01 1472137560 #26866]  INFO -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&category=pokemon-go" for 127.0.0.1
+I, [2016-08-25 15:06:01 1472137560 #26866]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+I, [2016-08-25 15:06:01 1472137560 #26866]  INFO -- : Error during posts selection from the DB.
+
+I, [2016-08-25 15:06:30 1472137590 #26866]  INFO -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&category=pokemon-go" for 127.0.0.1
+I, [2016-08-25 15:06:30 1472137590 #26866]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+I, [2016-08-25 15:06:30 1472137590 #26866]  INFO -- : Error during posts selection from the DB.
+
+I, [2016-08-25 15:06:33 1472137593 #26866]  INFO -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&category=pokemon-go" for 127.0.0.1
+I, [2016-08-25 15:06:33 1472137593 #26866]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+I, [2016-08-25 15:06:33 1472137593 #26866]  INFO -- : Error during posts selection from the DB.
+
+I, [2016-08-25 15:06:51 1472137611 #26866]  INFO -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&category=pokemon-go" for 127.0.0.1
+I, [2016-08-25 15:06:51 1472137611 #26866]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+I, [2016-08-25 15:06:51 1472137611 #26866]  INFO -- : Error during posts selection from the DB.
+
+I, [2016-08-25 15:06:52 1472137612 #26866]  INFO -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&category=pokemon-go" for 127.0.0.1
+I, [2016-08-25 15:06:52 1472137612 #26866]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+I, [2016-08-25 15:06:52 1472137612 #26866]  INFO -- : Error during posts selection from the DB.
+
+I, [2016-08-25 15:06:54 1472137614 #26866]  INFO -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&category=pokemon-go" for 127.0.0.1
+I, [2016-08-25 15:06:54 1472137614 #26866]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+I, [2016-08-25 15:06:54 1472137614 #26866]  INFO -- : Error during posts selection from the DB.
+
+I, [2016-08-25 15:49:50 1472140189 #26866]  INFO -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540" for 127.0.0.1
+I, [2016-08-25 15:49:50 1472140189 #26866]  INFO -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+I, [2016-08-25 15:49:50 1472140189 #26866]  INFO -- : Posts are selected from the DB successfully.
+
+F, [2016-08-25 15:50:14 1472140213 #26866]  FATAL -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&tag=pokemon-go" for 127.0.0.1
+F, [2016-08-25 15:50:14 1472140213 #26866]  FATAL -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+F, [2016-08-25 15:50:14 1472140213 #26866]  FATAL -- : Error during posts selection from the DB.
+
+F, [2016-08-25 15:54:27 1472140467 #26866]  FATAL -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&tag=pokemon-go" for 127.0.0.1
+F, [2016-08-25 15:54:27 1472140467 #26866]  FATAL -- : User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+F, [2016-08-25 15:54:27 1472140467 #26866]  FATAL -- : Error during posts selection from the DB.
+
+I, [2016-08-30 08:54:55 1472547292 #19181]  INFO -- : Started GET "/api/v1/posts.php?secret=3a12ab15b4cf8ac36184b66a07f8c656e8ee9f09e7f08ca2c6d3fd2b8df43263a7803b3e7dc899122b6869d7882b22da7e5613e3f60031d805a16069eb1a6540&count=4&source=pokemon-go" for 127.0.0.1
+I, [2016-08-30 08:54:55 1472547292 #19181]  INFO -- : User Agent: Ruby
+I, [2016-08-30 08:54:55 1472547292 #19181]  INFO -- : Posts are selected from the DB successfully.
+

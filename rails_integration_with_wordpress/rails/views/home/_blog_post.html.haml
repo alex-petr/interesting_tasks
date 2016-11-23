@@ -1,0 +1,8 @@
+.blog-post
+  .blog-post__wrapper
+    = link_to '', blog_post.link, class: 'blog-post__image', style: "background-image: url(#{blog_post.image})"
+    .slider-posts
+
+    .blog-post__info
+      = link_to blog_post.title, blog_post.link, class: 'blog-post__subtitle'
+      = link_to truncate(blog_post.description, length: 250), blog_post.link, class: 'blog-post__title'
