@@ -1,0 +1,44 @@
+%section.main{class: "main--template-#{controller.controller_name}"}
+  .main__container
+    .main__row
+
+      - if is_request_host_thai
+        = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-1', token: '6881987887'
+        = google_adsense size: :desktop_vertical, class: 'google_adsense--left', id: 'desktop-tablet-2', token: '8358721082'
+      - else
+        = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-1', token: '2032985888'
+        = google_adsense size: :desktop_vertical, class: 'google_adsense--left', id: 'desktop-tablet-2', token: '3509719081'
+
+      .main__column.main__column--product-list
+        .collection.collection--category{'data-view': 'list'}
+          .collection__description
+            .collection__title
+              %h1= "Search for: #{params[:q]}"
+          .collection.collection--view-type
+
+            -# This check `if is_request_host_thai` not inside `each_with_index` to decrease total logical conditions
+            -# count.
+            - if is_request_host_thai
+              - @products.each_with_index do |product, index|
+                = render partial: 'parts/card', object: product
+                - if 1 == index
+                  = google_adsense size: :mobile, id: 'mobile-1', token: '9902186288'
+            - else
+              - @products.each_with_index do |product, index|
+                = render partial: 'parts/card', object: product
+                - if 1 == index
+                  = google_adsense size: :mobile, id: 'mobile-1', token: '9622984688'
+
+          - if is_request_host_thai
+            = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-3', token: '9835454288'
+          - else
+            = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-3', token: '4986452286'
+
+          = paginate @paginatable_array
+
+          - if is_request_host_thai
+            = google_adsense size: :mobile, id: 'mobile-2', token: '2378919481'
+          - else
+            = google_adsense size: :mobile, id: 'mobile-2', token: '2099717888'
+
+        #react-filter-pagination

@@ -1,0 +1,28 @@
+%section.main.main--white
+  .main__container
+    .main__header
+      %h1= t('homepage.best_price_everyday')
+
+    -# This check `if is_request_host_thai` not inside `each_with_index` to decrease total logical conditions count.
+    - if is_request_host_thai
+      - Category.roots.order('id ASC').each_with_index do |category, index|
+        = render partial: 'category', object: category
+        - if 0 == index
+          = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-2', token: '7138046284'
+          = google_adsense size: :mobile, id: 'mobile-1', token: '4134854289'
+        - elsif 1 == index
+          = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-3', token: '8614779480'
+          = google_adsense size: :mobile, id: 'mobile-2', token: '5611587486'
+        - elsif 2 == index
+          = google_adsense size: :mobile, id: 'mobile-3', token: '7088320684'
+    - else
+      - Category.roots.order('id ASC').each_with_index do |category, index|
+        = render partial: 'category', object: category
+        - if 0 == index
+          = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-2', token: '9695853489'
+          = google_adsense size: :mobile, id: 'mobile-1', token: '5332385888'
+        - elsif 1 == index
+          = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-3', token: '2172586684'
+          = google_adsense size: :mobile, id: 'mobile-2', token: '6809119086'
+        - elsif 2 == index
+          = google_adsense size: :mobile, id: 'mobile-3', token: '8285852289'

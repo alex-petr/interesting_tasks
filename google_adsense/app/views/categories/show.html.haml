@@ -1,0 +1,70 @@
+- unless @category.nil?
+  %section.main{class: "main--template-#{controller.controller_name}"}
+
+    - if is_request_host_thai
+      = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-1', token: '8498321881'
+    - else
+      = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-1', token: '3649319887'
+
+    .main__container
+      .main__row
+        .main__header
+          %h1= "#{t('category.category')}: #{@category.name}"
+
+        -# show products from category
+      .main__row
+        .main__column.main__column--filter.js-filter
+          #react-filters
+            .filters.is-loading
+              .loader.loader--absolute
+                .table.table--fluid-height.table--fluid-width
+                  .table__cell.table__cell--middle.table__cell--center
+                    .loader__wrapper-icon
+                      .loader__icon
+
+          - if is_request_host_thai
+            = google_adsense size: :desktop_vertical, id: 'desktop-tablet-3', token: '2451788280'
+          - else
+            = google_adsense size: :desktop_vertical, id: 'desktop-tablet-3', token: '6602786287'
+
+        .main__column.main__column--product-list
+          .collection.collection--category{'data-view': 'grid'}
+            - unless @category.seo_text_header.blank?
+              .collection__description
+                .collection__title
+                  %h2= @category.name
+                = @category.seo_text_header.html_safe
+
+            .collection.collection--view-type
+
+              -# This check `if is_request_host_thai` not inside `each_with_index` to decrease total logical conditions
+              -# count.
+              - if is_request_host_thai
+                - @products.each_with_index do |product, index|
+                  = render partial: 'parts/card', object: product
+                  - if 3 == index
+                    = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-2', token: '9975055088'
+                    = google_adsense size: :mobile, id: 'mobile-1', token: '8565053888'
+                  - elsif 7 == index
+                    = google_adsense size: :mobile, id: 'mobile-2', token: '1041787088'
+              - else
+                - @products.each_with_index do |product, index|
+                  = render partial: 'parts/card', object: product
+                  - if 3 == index
+                    = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-2', token: '5126053080'
+                    = google_adsense size: :mobile, id: 'mobile-1', token: '9762585489'
+                  - elsif 7 == index
+                    = google_adsense size: :mobile, id: 'mobile-2', token: '2239318683'
+
+            =paginate @products
+
+            - if is_request_host_thai
+              = google_adsense size: :mobile, id: 'mobile-3', token: '2518520288'
+            - else
+              = google_adsense size: :mobile, id: 'mobile-3', token: '3716051884'
+
+          #react-filter-pagination
+
+- if @category.seo_text_footer.present?
+  .seo-text
+    = @category.seo_text_footer.html_safe

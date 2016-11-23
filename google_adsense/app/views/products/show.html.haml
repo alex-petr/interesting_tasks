@@ -1,0 +1,49 @@
+- if is_request_host_thai
+  = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-1', token: '3928521485'
+- else
+  = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-1', token: '8079519481'
+
+= render 'parts/breadcrumbs'
+
+.main__container
+  .main__row{itemscope:'', itemtype:'//schema.org/Product'}
+    .properties-title
+      %h1
+        %span{itemprop: 'name'}= @product.name
+        = link_to @product.brand.name, brand_path(brand_url: @product.brand.path), itemprop: 'brand' unless @product.brand.blank?
+
+    - if is_request_host_thai
+      = google_adsense size: :desktop_vertical, class: 'google_adsense--left', id: 'desktop-tablet-3', token: '1091512686'
+    - else
+      = google_adsense size: :desktop_vertical, class: 'google_adsense--left', id: 'desktop-tablet-3', token: '8150447888'
+
+    .properties-hold
+      = render 'gallery'
+      = render 'price_block'
+
+    = render 'shops'
+
+    - if is_request_host_thai
+      = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-2', token: '5405254687'
+      = google_adsense size: :mobile, id: 'mobile-1', token: '3995253481'
+    - else
+      = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-2', token: '9556252680'
+      = google_adsense size: :mobile, id: 'mobile-1', token: '5192785088'
+
+    = render 'coupons'
+    = render 'related_products'
+
+    - if is_request_host_thai
+      = google_adsense size: :mobile, id: 'mobile-2', token: '5471986687'
+    - else
+      = google_adsense size: :mobile, id: 'mobile-2', token: '6669518286'
+
+    = render 'specifications'
+    = render 'description'
+
+    - if is_request_host_thai
+      = google_adsense size: :mobile, id: 'mobile-3', token: '8425453082'
+    - else
+      = google_adsense size: :mobile, id: 'mobile-3', token: '8146251480'
+
+    #js-product

@@ -1,0 +1,10 @@
+- if is_request_host_thai
+  = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-1', token: '8836399083'
+- else
+  = google_adsense size: :desktop_horizontal, id: 'desktop-tablet-1', token: '6742387084'
+
+= render 'collection_bests'
+
+- if @seo_footer.present?
+  .seo-text
+    != @seo_footer
