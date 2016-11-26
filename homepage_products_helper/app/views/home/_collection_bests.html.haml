@@ -1,0 +1,6 @@
+%section.main.main--white
+  .main__container
+    .main__header
+      %h1= t('homepage.best_price_everyday')
+    - Category.roots.order('id ASC').each do |category|
+      = render partial: 'category', object: category

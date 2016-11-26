@@ -1,0 +1,13 @@
+.collection.collection--bests
+  .collection__item.collection__item--brands.brands
+    .brands__header-wrap
+      %a.brands__header{href: category_path(category_url: category.path)}= category.name
+    %ul.brands__list
+      %li
+        = link_to category_path(category_url: category.path) do
+          %span.brands__icon
+            %i{class: "icon icon-#{category.menu_class}"}
+  .collection__item.collection__type-lists
+    - best_products_by_category(category).each do |product|
+      = render partial: 'product', object: product
+
