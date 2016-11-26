@@ -1,0 +1,116 @@
+- content_for :header do
+  = stylesheet_link_tag 'admin/coupon_types', media: 'all'
+  = stylesheet_link_tag 'admin/product_reviews', media: 'all'
+
+-# Breadcrumbs
+.row
+  .col-lg-12
+    %ol.breadcrumb
+      %li
+        %a{href: '/admin'} Home
+      %li.active
+        %span Coupons
+    .clearfix
+      %h1.pull-left Coupons
+
+.row
+  .col-lg-12
+    .main-box.clearfix
+      .main-box-header.clearfix
+        %h2.pull-left
+          Total coupons:
+          %strong= @coupons.total_count
+        .filter-block.pull-right
+          = form_tag(admin_coupons_path, method: :get, id: 'search_form', class: 'filter-block pull-right') do
+            .form-group.pull-left
+              %input.form-control{placeholder: 'Search coupon...', type: 'text', name: 'query',
+              value: !params[:query].blank? && params[:query] }
+                %i.fa.fa-search.search-icon
+            .form-group.pull-left
+              %a.btn.btn-primary.pull-right{href: new_admin_coupon_path}
+                %i.fa.fa-plus-circle.fa-lg
+                Add coupon
+      .main-box-body.clearfix
+        = render 'admin/shared/flash'
+        .table-responsive
+          %table.table.user-list.table-striped.table-hover
+            %thead
+              %tr
+                %th{style: 'width: 50px;'} id
+                %th.text-center Displayed image
+                %th= sort_header('Name', 'name', &method(:admin_coupons_path))
+                %th.text-center Link
+                %th.text-center= sort_header('Status / Moderated', 'approved', &method(:admin_coupons_path))
+                %th.text-center= sort_header('Display on', 'coupon_page', &method(:admin_coupons_path))
+                %th.text-center= sort_header('Classification', 'classification', &method(:admin_coupons_path))
+                %th.text-center{style: 'width: 10%'} Discount
+                %th.text-center= sort_header('Used times', 'uses_count', &method(:admin_coupons_path))
+                %th.text-center= sort_header('Expire', 'expire', &method(:admin_coupons_path))
+                %th.text-center Actions
+            %tbody
+              - @coupons.each do |item|
+                %tr
+                  %td= item.id
+                  %td.text-center
+                    %img{ src: coupon_logo(item), width: 50 }
+                  %td= item.name
+                  %td.text-center
+                    - if item.url.present?
+                      %a.btn.btn-primary{href: item.url, target: '_blank'}
+                        %i.fa.fa-external-link
+                    - else
+                      %span.label.label-default None
+                  %td.text-center
+                    - if item.approved
+                      %span.label.label-success Approved
+                    - else
+                      - if item.moderated
+                        %span.label.label-default Rejected
+                      - else
+                        %span.label.label-default Wait moderation
+                      -#%td.text-center
+                    - if item.moderated
+                      %span.label.label-primary Moderated
+                    - else
+                      %span.label.label-danger Pending
+                  %td.text-center
+                    - if item.home_page
+                      %span.label.label-success Home page
+                    - if item.coupon_page
+                      %span.label.label-success Coupon page
+                    - if !item.home_page && !item.coupon_page
+                      %span.label.label-default None
+                  %td.text-center
+                    - if item.promotional?
+                      Promotional
+                    - else
+                      Coupon code
+                  %td{class: 'text-center', id: 'coupon_types'}
+                    %strong
+                      = "#{item.coupon_discount_type.name}: "
+                    - if 'percent' == item.coupon_discount_type.key
+                      = "#{item.discount}"
+                    - elsif 'amount' == item.coupon_discount_type.key
+                      = "#{item.discount} #{t('number.currency.format.unit')}"
+                    - elsif 'special' == item.coupon_discount_type.key
+                      - if item.coupon_types.present?
+                        - item.coupon_types.each do |coupon_type|
+                          %span.label.label-info
+                            %i.fa.fa-tag
+                            = coupon_type.name
+                      - else
+                        %span.label.label-default None
+                  %td.text-center= item.uses_count
+                  %td.text-center= l item.expires_at, format: :long
+                  %td.text-center
+                    %a.table-link{href: edit_admin_coupon_path(item)}
+                      %span.fa-stack
+                        %i.fa.fa-square.fa-stack-2x
+                        %i.fa.fa-pencil.fa-stack-1x.fa-inverse
+                    %a.table-link.danger{ href: admin_coupon_path(item),
+                                          data: { confirm: 'Are you sure?', method: 'delete' } }
+                      %span.fa-stack
+                        %i.fa.fa-square.fa-stack-2x
+                        %i.fa.fa-trash-o.fa-stack-1x.fa-inverse
+
+        = paginate @coupons

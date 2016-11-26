@@ -1,0 +1,473 @@
+- content_for :header do
+  = stylesheet_link_tag 'admin/coupon_types', media: 'all'
+  = stylesheet_link_tag 'admin/coupons', media: 'all'
+
+= simple_form_for [:admin, @coupon], html: { role: 'form' }, defaults: { input_html: { class: 'form-control' } } do |f|
+  .row
+
+    / Every success updating set :moderated to true
+    = f.input_field :moderated, as: :hidden, value: 1
+
+    .form-group.col-md-12
+      %h3
+        %span Coupon logo
+
+    .clearfix
+
+    .form-group.col-md-2
+      %h4 Displayed image
+      %img{ src: coupon_logo(@coupon), width: 200 }
+
+    .form-group.col-md-2
+      %h4 Display default logo
+      .onoffswitch.onoffswitch-success
+        %input{ type: 'hidden', name: 'coupon[default_logo]', value: 0 }
+        %input#onoffswitch_default_logo.onoffswitch-checkbox{ checked: @coupon.default_logo,
+        name: 'coupon[default_logo]', type: 'checkbox', value: 1 }
+          %label.onoffswitch-label{for: 'onoffswitch_default_logo'}
+            .onoffswitch-inner
+            .onoffswitch-switch
+
+    .form-group.col-md-4
+      %h4 Select image from coupon images list
+      %select#image{ style: 'width: 100%', name: 'coupon[coupon_image_id]' }
+        %option{value: ''} No image
+        - @coupon_images.each do |image|
+          %option{value: image.id, selected: @coupon.coupon_image && @coupon.coupon_image.id == image.id,
+            data: { image: image.image(:thumb) } }= image.name
+
+    .form-group.col-md-6
+
+    .clearfix
+
+    .form-group.col-md-12
+      %h3
+        %span Main info
+
+    .clearfix
+
+    .form-group.col-md-4
+      = f.input :name
+
+    .form-group.col-md-4
+      = f.input :code
+
+    .form-group.col-md-4
+      = f.input :url, as: :string
+
+    .clearfix
+
+    .form-group.col-md-12
+      = f.input :description, as: :text, input_html: { rows: 3 }
+
+    .clearfix
+
+    .form-group.col-md-4
+      .control-group
+        = f.label :donor_id, 'Donor', class: 'control-label text-capitalize'
+        .controls
+          %input{ type: 'hidden', name: 'coupon[donor_id]', id: 'donor', style: 'width: 100%',
+          value: @coupon.donor.try(:id),
+          data: { id: @coupon.donor.try(:id), name: @coupon.donor.try(:domain),
+          api_v1_admin_donors_path: api_v1_admin_donors_path } }
+      %button.btn.btn-primary#js-btn-add-donor{type: 'button', style: 'width: 100%'}
+        %span.fa.fa-plus-square
+        Add new donor
+        %span.new-donor-name
+
+    .form-group.col-md-4
+      .control-group
+        = f.label :brand_id, 'Brand', class: 'control-label text-capitalize'
+        .controls
+          %input{ type: 'hidden', name: 'coupon[brand_id]', id: 'brand', style: 'width: 100%',
+          value: @coupon.brand.try(:id),
+          data: { id: @coupon.brand.try(:id), name: @coupon.brand.try(:name),
+          api_v1_admin_brands_path: api_v1_admin_brands_path } }
+        %button.btn.btn-primary#js-btn-add-brand{type: 'button', style: 'width: 100%'}
+          %span.fa.fa-plus-square
+          Add new brand
+          %span.new-brand-name
+
+    .form-group.col-md-4
+      .control-group
+        = f.label :seller_id, 'Seller', class: 'control-label text-capitalize'
+        .controls
+          %input{ type: 'hidden', name: 'coupon[seller_id]', id: 'seller', style: 'width: 100%',
+          value: @coupon.seller.try(:id),
+          data: { id: @coupon.seller.try(:id), name: @coupon.seller.try(:name),
+          api_v1_admin_sellers_path: api_v1_admin_sellers_path } }
+      %button.btn.btn-primary#js-btn-add-seller{type: 'button', style: 'width: 100%'}
+        %span.fa.fa-plus-square
+        Add new seller
+        %span.new-seller-name
+
+    .clearfix
+
+    .form-group.col-md-12
+      %h3
+        %span Coupon displaying
+
+    .clearfix
+
+    .form-group.col-md-1
+
+    .form-group.col-md-3
+      %h4 Approve / reject coupon
+      .onoffswitch.onoffswitch-success
+        %input{type: 'hidden', name: 'coupon[approved]', value: 0}
+        %input#onoffswitch-approved.onoffswitch-checkbox{checked: @coupon.approved, name: 'coupon[approved]',
+        type: 'checkbox', value: 1}
+          %label.onoffswitch-label{for: 'onoffswitch-approved'}
+            .onoffswitch-inner
+            .onoffswitch-switch
+
+    .form-group.col-md-1
+
+    .form-group.col-md-3
+      %h4 Display coupon on homepage
+      .onoffswitch.onoffswitch-success
+        %input{ type: 'hidden', name: 'coupon[home_page]', value: 0}
+        %input#onoffswitch_home_page.onoffswitch-checkbox{checked: @coupon.home_page, name: 'coupon[home_page]',
+        type: 'checkbox', value: 1 }
+          %label.onoffswitch-label{ for: 'onoffswitch_home_page' }
+            .onoffswitch-inner
+            .onoffswitch-switch
+
+    .form-group.col-md-1
+
+    .form-group.col-md-3
+      %h4 Display coupon on coupon page
+      .onoffswitch.onoffswitch-success
+        %input{type: 'hidden', name: 'coupon[coupon_page]', value: 0}
+        %input#onoffswitch_coupon_page.onoffswitch-checkbox{ checked: @coupon.coupon_page, name: 'coupon[coupon_page]',
+        type: 'checkbox', value: 1 }
+          %label.onoffswitch-label{ for: 'onoffswitch_coupon_page' }
+            .onoffswitch-inner
+            .onoffswitch-switch
+
+    .clearfix
+
+    .form-group.col-md-12
+      %h3
+        %span Coupon discount
+
+    .clearfix
+
+    .form-group.col-md-1
+      %h4 Number of uses
+      %input{ class: 'form-control', id: 'uses_count', type: 'text', placeholder: @coupon.uses_count, disabled: true }
+
+    .form-group.col-md-2
+      %h4 Classification
+
+      -#%label Choose one option
+      .radio
+        %input#optionsRadios1{checked: @coupon.promotional?, name: 'coupon[promotional]', type: 'radio', value: 1}/
+        %label{for: 'optionsRadios1', title: 'Direct user to coupon URL, omit coupon code pop-up'}
+          Promotional
+      .radio
+        %input#optionsRadios2{checked: !@coupon.promotional?, name: 'coupon[promotional]', type: 'radio', value: 0}/
+        %label{for: 'optionsRadios2', title: 'Pop-up coupon details window with "Copy code" button'}
+          Coupon code
+
+      -#.btn-group{'data-toggle': 'buttons'}
+      -#  %label.btn.btn-primary{class: @coupon.promotional? && 'active',
+      -#  title: 'Direct user to coupon URL, omit coupon code pop-up'}
+      -#    %input#option1{checked: @coupon.promotional?, name: 'coupon[promotional]', type: 'radio', value: 1}/
+      -#    Promotional
+      -#  %label.btn.btn-primary{class: !@coupon.promotional? && 'active',
+      -#  title: 'Pop-up coupon details window with "Copy code" button'}
+      -#    %input#option2{checked: !@coupon.promotional?, name: 'coupon[promotional]', type: 'radio', value: 0}/
+      -#    Coupon code
+
+    .form-group.col-md-2
+      %h4 Discount type
+      = f.input :coupon_discount_type_id, collection: @discount_types, selected: @discount_type_key, label: false,
+      input_html: { style: 'width: 100%', id: 'coupon_discount_type' }
+
+    .form-group.col-md-1#discount_percent_container
+      %h4 Discount %
+      = f.select(:discount, (1..100).map { |discount| [discount, discount] }, {}, { style: 'width: 100%',
+      id: 'discount_percent' })
+
+    .form-group.col-md-2#discount_amount_container
+      %h4= "Discount amount, #{t('number.currency.format.unit')}"
+      = f.input :discount, label: false, input_html: { id: 'discount_amount', style: 'width: 55%' }
+
+    .form-group.col-md-4#discount_special_container
+      %h4 Discount special: coupon types
+      = f.association :coupon_types, wrapper: false, placeholder: 'Select a coupon types', label: false,
+      input_html: { id: 'discount_special' }
+
+    .clearfix
+
+    .form-group.col-md-12
+      %h3
+        %span Coupon expiration
+
+    .clearfix
+
+    .form-group.col-md-2
+      %h4 Expire Date
+      .input-group.input-append.bootstrap-timepicker
+        %span.add-on.input-group-addon
+          %i.fa.fa-calendar
+        %input#expire_date.form-control{ type: 'text', name: 'coupon[expire_date]', value: @expires_at[:date] }
+      %span.help-block format mm/dd/yyyy
+
+    .form-group.col-md-2
+      %h4 Expire Time
+      .input-group.input-append.bootstrap-timepicker
+        %input#expire_time.form-control{ type: 'text', name: 'coupon[expire_time]', value: @expires_at[:time] }
+        %span.add-on.input-group-addon
+          %i.fa.fa-clock-o
+      %span.help-block format hh:mm:ss
+
+    .form-group.col-md-9
+
+    .clearfix
+
+  .row
+    .form-group.col-xs-10
+      = f.button :submit, 'Save', class: 'btn-success'
+
+:coffee
+  $ ->
+    # For donor/brand/seller dynamic creating new items functional if not exists.
+    donor_not_found_term  =
+    brand_not_found_term  =
+    seller_not_found_term = ''
+
+    $js_btn_add_donor  = $('#js-btn-add-donor')
+    $js_btn_add_brand  = $('#js-btn-add-brand')
+    $js_btn_add_seller = $('#js-btn-add-seller')
+
+    $new_donor_name  = $js_btn_add_donor.find('.new-donor-name')
+    $new_brand_name  = $js_btn_add_brand.find('.new-brand-name')
+    $new_seller_name = $js_btn_add_seller.find('.new-seller-name')
+
+    $('#discount_percent, #discount_special').select2()
+
+    formatCouponImages = (data, container, query) ->
+      coupon_image = $(data.element).data('image')
+      if !coupon_image
+        data.text
+      else
+        '<span><img src="' + coupon_image + '" ' + (if 'object' == typeof(query) then '' else 'height="22"') + ' /> ' +
+        data.text + '</span>'
+
+    $('#image').select2
+      formatResult: formatCouponImages
+      formatSelection: formatCouponImages
+      escapeMarkup: (markup) -> markup
+
+    # Discount type switcher: percent, amount, special - coupon types.
+    hideDisableDiscountOptions = () ->
+      $('#discount_percent, #discount_amount, #discount_special').prop('disabled', true)
+      $('#discount_percent_container, #discount_amount_container, #discount_special_container').hide()
+
+    showEnableDiscountOptions = (element) ->
+      $('#discount_' + element).prop('disabled', false)
+      $('#discount_' + element + '_container').show()
+
+    $discount_type = $('#coupon_discount_type')
+
+    $discount_type.select2(minimumResultsForSearch: Infinity)
+
+    $discount_type.on 'change', (event) ->
+      hideDisableDiscountOptions()
+      showEnableDiscountOptions event.val
+
+    hideDisableDiscountOptions()
+    showEnableDiscountOptions $discount_type.val()
+
+    # Brand and seller AJAX selects.
+    $donor  = $('#donor')
+    $brand  = $('#brand')
+    $seller = $('#seller')
+
+    formatResult = (data, container, query) ->
+      data.name = data.name.replace((new RegExp(query.term, 'gi')), '<span class="select2-match">$&</span>')
+      '<div class="row-fluid"><div class="span12">' + data.name + '</div></div>'
+
+    formatSelection = (data) -> data.name
+
+    initialDonorSelection =
+      id:   $donor.data('id')
+      name: $donor.data('name')
+
+    initialBrandSelection =
+      id:   $brand.data('id')
+      name: $brand.data('name')
+
+    initialSellerSelection =
+      id:   $seller.data('id'),
+      name: $seller.data('name')
+
+    $donor.select2
+      ajax:
+        url: $donor.data('api-v1-admin-donors-path')
+        dataType: 'json'
+        quietMillis: 250
+        data: (term, page) ->
+          # `page` is the one-based page number tracked by Select2
+          # if `per_page` count not set it will be default value 30 from back-end
+
+          # Save current searched item to variable.
+          donor_not_found_term = term
+
+          {
+            query: term
+            page: page
+          }
+        results: (data, page) ->
+          # whether or not there are more `results` available
+          # value of `more` set by the formula so Select2 knows if more results can be loaded
+
+          # If nothing found.
+          if 0 == data.donors.length
+            # Enable add button
+            $new_donor_name.text '«' + donor_not_found_term + '»'
+            # Add button to select.
+            $('#select2-drop').append $js_btn_add_donor
+            $js_btn_add_donor.show()
+
+          {
+            results: data.donors
+            more: page * data.meta.per_page < data.meta.total_count
+          }
+        cache: true
+      initSelection: (element, callback) -> callback initialDonorSelection
+      escapeMarkup: (markup) -> markup
+      minimumInputLength: 2
+      formatResult: formatResult
+      formatSelection: formatSelection
+
+    $brand.select2
+      ajax:
+        url: $brand.data('api-v1-admin-brands-path')
+        dataType: 'json'
+        quietMillis: 250
+        data: (term, page) ->
+          # `page` is the one-based page number tracked by Select2
+          # if `per_page` count not set it will be default value 30 from back-end
+
+          # Save current searched item to variable.
+          brand_not_found_term = term
+
+          {
+            query: term
+            page: page
+          }
+        results: (data, page) ->
+          # whether or not there are more `results` available
+          # value of `more` set by the formula so Select2 knows if more results can be loaded
+
+          # If nothing found.
+          if 0 == data.brands.length
+            # Enable add button
+            $new_brand_name.text '«' + brand_not_found_term + '»'
+            # Add button to select.
+            $('#select2-drop').append $js_btn_add_brand
+            $js_btn_add_brand.show()
+
+          {
+            results: data.brands
+            more: page * data.meta.per_page < data.meta.total_count
+          }
+        cache: true
+      initSelection: (element, callback) -> callback initialBrandSelection
+      escapeMarkup: (markup) -> markup
+      minimumInputLength: 2
+      formatResult: formatResult
+      formatSelection: formatSelection
+
+    $seller.select2
+      ajax:
+        url: $seller.data('api-v1-admin-sellers-path')
+        dataType: 'json'
+        quietMillis: 250
+        data: (term, page) ->
+          seller_not_found_term = term
+          {
+            query: term
+            page: page
+          }
+        results: (data, page) ->
+          if 0 == data.sellers.length
+            $new_seller_name.text '«' + seller_not_found_term + '»'
+            $('#select2-drop').append $js_btn_add_seller
+            $js_btn_add_seller.show()
+          {
+            results: data.sellers
+            more: page * data.meta.per_page < data.meta.total_count
+          }
+        cache: true
+      initSelection: (element, callback) -> callback initialSellerSelection
+      escapeMarkup: (markup) -> markup
+      minimumInputLength: 2
+      formatResult: formatResult
+      formatSelection: formatSelection
+
+    $js_btn_add_donor.hide()
+    $js_btn_add_brand.hide()
+    $js_btn_add_seller.hide()
+
+    # Hide button in select closed.
+    $donor.on 'select2-close', (event) -> $js_btn_add_donor.hide()
+    $brand.on 'select2-close', (event) -> $js_btn_add_brand.hide()
+    $seller.on 'select2-close', (event) -> $js_btn_add_seller.hide()
+
+    # Click on "Add donor" button.
+    $js_btn_add_donor.on 'click', (event) ->
+      $.ajax
+        type: 'POST'
+        url: $donor.data('api-v1-admin-donors-path')
+        data: { donor: { domain: donor_not_found_term } }
+        success: (response) ->
+          # Change text in selected option.
+          $('#s2id_donor .select2-chosen').text donor_not_found_term
+          # Change form submitted hidden input value with value obtained from AJAX.
+          $donor.attr('value', response.result.id)
+        error: (response) ->
+          console.error 'Errors during request POST ' + $donor.data('api-v1-admin-donors-path')
+          console.error response.responseJSON.error
+      # Clean button text
+      $new_donor_name.text ''
+      # Hide button and close select.
+      $js_btn_add_donor.hide()
+      $donor.select2 'close'
+
+    $js_btn_add_brand.on 'click', (event) ->
+      $.ajax
+        type: 'POST'
+        url: $brand.data('api-v1-admin-brands-path')
+        data: { brand: { name: brand_not_found_term } }
+        success: (response) ->
+          $('#s2id_brand .select2-chosen').text brand_not_found_term
+          $brand.attr('value', response.result.id)
+        error: (response) ->
+          console.error 'Errors during request POST ' + $brand.data('api-v1-admin-brands-path')
+          console.error response.responseJSON.error
+      $new_brand_name.text ''
+      $js_btn_add_brand.hide()
+      $brand.select2 'close'
+
+    $js_btn_add_seller.on 'click', (event) ->
+      $.ajax
+        type: 'POST'
+        url: $seller.data('api-v1-admin-sellers-path')
+        data: { seller: { name: seller_not_found_term } }
+        success: (response) ->
+          $('#s2id_seller .select2-chosen').text seller_not_found_term
+          $seller.attr('value', response.result.id)
+        error: (response) ->
+          console.error 'Errors during request POST ' + $seller.data('api-v1-admin-sellers-path')
+          console.error response.responseJSON.error
+      $new_seller_name.text ''
+      $js_btn_add_seller.hide()
+      $seller.select2 'close'
+
+    # Date & time selects configuring for usability.
+    $('#expire_date').datepicker().prev().click -> $('#expire_date').datepicker('show')
+    $('#expire_time').timepicker(minuteStep: 5, showSeconds: true, showMeridian: false).focus -> $(@).next().click()

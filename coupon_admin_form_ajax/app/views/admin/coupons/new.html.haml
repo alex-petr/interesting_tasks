@@ -1,0 +1,19 @@
+.row
+  .col-lg-12
+    %ol.breadcrumb
+      %li
+        %a{href: '/admin'} Home
+      %li
+        = link_to 'Coupons', admin_coupons_path
+      %li.active
+        %span Coupon creating
+    %h1 New Coupon
+.row
+  .col-lg-12
+    .main-box.clearfix
+      %header.main-box-header.clearfix
+        %h2 New Coupon
+
+      .main-box-body.clearfix
+        = render 'admin/shared/flash'
+        = render 'form'

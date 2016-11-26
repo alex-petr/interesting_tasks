@@ -1,0 +1,32 @@
+.row
+  .col-lg-12
+    %ol.breadcrumb
+      %li
+        %a{href: '/admin'} Home
+      %li
+        = link_to 'Coupons', admin_coupons_path
+      %li.active
+        %span Coupon editing
+    %h1 Edit Coupon
+.row
+  .col-lg-12
+    .main-box.clearfix
+      %header.main-box-header.clearfix
+        %h2 Edit Coupon
+
+      .main-box-body.clearfix
+        = render 'admin/shared/flash'
+        .alert.alert-info.fade.in
+          -#%button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+          %i.fa.fa-info-circle.fa-fw.fa-lg
+          %strong
+            Useful links:
+            &nbsp;
+            = link_to coupon_path(@coupon), target: '_blank' do
+              %i.fa.fa-external-link
+              Coupon
+            &nbsp;
+            = link_to coupons_path, target: '_blank' do
+              %i.fa.fa-external-link
+              Coupons page
+        = render 'form'
