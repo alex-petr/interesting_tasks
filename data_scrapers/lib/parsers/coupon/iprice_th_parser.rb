@@ -1,0 +1,2 @@
+class IpriceThParser < IpriceParser
+end

@@ -1,0 +1,33 @@
+source 'https://rubygems.org'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.2.3'
+
+# Crawler and parser: automating interaction with websites
+gem 'mechanize'
+# For crawlers: performing JS on AJAX sites
+gem 'capybara'#, '~>2.8.1'
+gem 'nokogiri'
+
+gem 'poltergeist'
+gem 'launchy'
+gem 'selenium-webdriver', '~> 2.53.4'
+gem 'phantomjs'
+gem 'headless'
+
+# UPDATE THIS VERY CAREFULLY
+gem 'capybara-webkit', '~> 1.11.1'
+
+# Calculate Dhash on images
+gem 'dhash'
+
+# For delayed background processing
+gem 'sidekiq', '=4.2.2'
+# For sidekiq monitor
+gem 'sidekiq_monitor'
+# To limit sidekiq queues
+gem 'sidekiq-limit_fetch'
+
+group :test do
+  gem 'rspec-sidekiq'
+end
