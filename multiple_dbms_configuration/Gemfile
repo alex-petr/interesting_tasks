@@ -1,0 +1,25 @@
+source 'https://rubygems.org'
+
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+  "https://github.com/#{repo_name}.git"
+end
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.0.1'
+
+# Use PostgreSQL as the database for Active Record
+gem 'pg'
+
+# Use Amazon Redshift for Messages and Reports
+gem 'activerecord5-redshift-adapter'
+
+# MS SQL Server Adapter For Rails
+gem 'tiny_tds'
+gem 'activerecord-sqlserver-adapter'
+
+# Redis Ruby client library for getting Messages and Reports last update timestamp
+gem 'redis'
+
+# A Ruby gem to load environment variables from `.env`.
+gem 'dotenv-rails'

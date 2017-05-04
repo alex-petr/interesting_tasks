@@ -1,0 +1,45 @@
+defaults:
+  - &default_postgresql
+    adapter: postgresql
+    encoding: unicode
+    pool: <%= ENV.fetch('RAILS_MAX_THREADS', 5) %>
+    url:  <%= ENV['POSTGRESQL_URL'] %>
+
+  - &default_sql_server
+    adapter: sqlserver
+    timeout:  <%= ENV.fetch('SQLSERVER_TIMEOUT', 20) %>
+    timezone: <%= ENV.fetch('SQLSERVER_TIMEZONE', 'US/Central') %>
+
+development:
+  <<: *default_postgresql
+
+test:
+  <<: *default_postgresql
+
+staging:
+  <<: *default_postgresql
+
+production:
+  <<: *default_postgresql
+
+redshift:
+  adapter: redshift
+  pool: 5
+  timeout: 10000
+  encoding: utf8
+  host:     <%= ENV['REDSHIFT_HOST'] %>
+  port:     <%= ENV['REDSHIFT_PORT'] %>
+  database: <%= ENV['REDSHIFT_DB'] %>
+  username: <%= ENV['REDSHIFT_USER'] %>
+  password: <%= ENV['REDSHIFT_PASSWORD'] %>
+
+sql_server_amtelco_internal:
+  <<: *default_sql_server
+  url: <%= ENV['SQLSERVER_AMTELCO_INTERNAL_URL'] %>
+
+sql_server_amtelco_custom:
+  <<: *default_sql_server
+  url: <%= ENV['SQLSERVER_AMTELCO_CUSTOM_URL'] %>
+
+redis:
+  url: <%= ENV['REDIS_URL'] %>
