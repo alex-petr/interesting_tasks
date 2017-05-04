@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    meta charset= 'utf-8' /
+    meta name='viewport' content='width=device-width, initial-scale=1.0' /
+    meta http-equiv='X-UA-Compatible' content='IE=edge' /
+
+    title Omni Channel 24/7 Customer Contact Support - LiveVoice
+    meta name='description' content='Omni Channel 24/7 Customer Contact Support - LiveVoice' /
+    meta name='keywords' content='LiveVoice' /
+
+    = csrf_meta_tags
+
+    link rel='icon' type='image/png' sizes='32x32' href='#{image_path 'favicon.png'}' /
+
+    = stylesheet_link_tag 'application',  media: 'all', 'data-turbolinks-track' => 'reload'
+    = stylesheet_link_tag styles_to_load, media: 'all', 'data-turbolinks-track' => 'reload'
+
+    /! google font libraries
+    link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300|Titillium+Web:200,300,400" rel="stylesheet" type="text/css" /
+    link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:300,400,600,700" rel="stylesheet" /
+
+  body class="template-#{controller_name}"
+    #theme-wrapper
+      #wrap-1
+        = render 'shared/header_dashboard'
+        = yield
+        a#top-link href="javascript:void(0)"
+
+      = render 'shared/footer_dashboard'
+
+    = javascript_include_tag 'application',   'data-turbolinks-track' => 'reload'
+    = javascript_include_tag scripts_to_load, 'data-turbolinks-track' => 'reload'
+
+    /[if lt IE 9]
+      = javascript_include_tag 'centaurus/html5shiv'
+      = javascript_include_tag 'centaurus/respond.min'
