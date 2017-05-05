@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.0.1'
+
+gem 'devise'
+
+# Rollbar error tracking and logging service
+gem 'rollbar'
+
+# A Ruby gem to load environment variables from `.env`.
+gem 'dotenv-rails'
+
+# Ruby wrappers for the HubSpot REST API. Read more: https://developers.hubspot.com/docs/overview
+gem 'hubspot-ruby'
