@@ -1,0 +1,28 @@
+.row style="margin-bottom: 2em"
+  .col-lg-4
+  .col-lg-4.text-left
+    .main-box
+      header.main-box-header.clearfix
+        h2 Or send us a message
+      .main-box-body.clearfix
+        - if flash[:is_message_submitted]
+          .alert.alert-success.fade.in
+            button.close aria-hidden="true" data-dismiss="alert" type="button"  ×
+            i.fa.fa-check-circle.fa-fw.fa-lg
+            strong<> Thank you!
+            | We will review the information you submitted and will contact you back shortly.
+            strong<> Help is on the way!
+        form method="POST" action="#{error_message_path}"
+          = hidden_field_tag :authenticity_token, form_authenticity_token
+          - unless user_signed_in?
+            .form-group
+              /label for="email" E-mail
+              input#email.form-control type="text" name="errors[email]" placeholder="E-mail"
+          .form-group
+            /label for="message" Message
+            textarea#message.form-control rows="3" name="errors[message]" placeholder="Type your message here"
+          .form-group
+            button.btn.btn-success.pull-right type="submit"
+              i.fa.fa-send.fa-lg>
+              | Submit
+  .col-lg-4

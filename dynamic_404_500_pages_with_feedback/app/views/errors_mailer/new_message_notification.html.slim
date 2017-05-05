@@ -1,0 +1,26 @@
+p
+  strong Message from error page:
+  br
+  = @message
+
+p
+  - if @account_info[:name]
+    | User name:
+    strong< #{@account_info[:name]}
+    br
+
+  - if @account_info[:email]
+    | User email:
+    strong< #{@account_info[:email]}
+    br
+
+  - if @account_info[:account_name]
+    | Account name:
+    strong< #{@account_info[:account_name]}
+    br
+
+  - if @account_info[:account_number]
+    | DID number:
+    strong< #{@account_info[:account_number]}
+p
+  | LiveVoice Notifier.
